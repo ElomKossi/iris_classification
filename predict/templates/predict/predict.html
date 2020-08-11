@@ -32,10 +32,10 @@
     <div class="row justify-content-md-center">
         <div class="col-md-4">
             <h1>Iris Prediction</h1>
-            {% csrf_token %}
-            {{ form.as_p }}
-            {% comment %}<form action="" id="post-form">
-                <div class="form-group">
+            <form action="{% url "predict:prediction_page" %}" method="post" id="post-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% comment %}<div class="form-group">
                     <label for="sepal_length">Sepal Length</label>
                     <input type="number" step="0.1" class="form-control" id="sepal_length" placeholder="" required>
                 </div>
@@ -50,9 +50,9 @@
                 <div class="form-group">
                     <label for="petal_width">Petal Width</label>
                     <input type="number" step="0.1" class="form-control" id="petal_width" placeholder="" required>
-                </div>
+                </div>{% endcomment %}
                 <button type="submit" value="Submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
-            </form>{% endcomment %}
+            </form>
         </div>
     </div>
 </div>

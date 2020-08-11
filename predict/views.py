@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+
+from .forms import PredResultsForm
 from .models import PredResults
 import pandas as pd
 
